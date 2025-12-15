@@ -12,6 +12,13 @@ import australiaImage from '../assets/Study-in-Australia.webp';
 import { useEffect, useState } from 'react';
 import { getCountries, defaultCountries } from '../shared/clientData';
 
+const imageFallbacks = {
+  USA: usaImage,
+  Canada: canadaImage,
+  Europe: europeImage,
+  Australia: australiaImage,
+};
+
 const services = [
   {
     title: 'Scholarship Assistance',
@@ -122,7 +129,10 @@ const Home = () => {
     const remapped = countries.map((c) => ({
       id: c.id,
       name: c.name,
-      image: c.flag || usaImage,
+      image:
+        typeof c.flag === 'string' && c.flag.includes('/src/')
+          ? imageFallbacks[c.name] || usaImage
+          : c.flag || imageFallbacks[c.name] || usaImage,
       tuition: c.tuition,
       livingCost: c.livingCost || c.living,
       workRights: c.workRights || 'Work during study',

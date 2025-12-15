@@ -13,6 +13,12 @@ const imageFallbacks = {
   Australia: australiaImage,
 };
 
+const resolveImage = (country) => {
+  const hasInvalidSrcPath = typeof country.flag === 'string' && country.flag.includes('/src/');
+  if (country.flag && !hasInvalidSrcPath) return country.flag;
+  return imageFallbacks[country.name] || usaImage;
+};
+
 const Countries = () => {
   const [countries, setCountries] = useState(defaultCountries);
 
@@ -20,7 +26,7 @@ const Countries = () => {
     const data = getCountries();
     const mapped = data.map((c) => ({
       ...c,
-      image: c.flag || imageFallbacks[c.name] || usaImage,
+      image: resolveImage(c),
       livingCost: c.livingCost || c.living || '—',
       workRights: c.workRights || 'Work during study',
       universities: c.universities || [],

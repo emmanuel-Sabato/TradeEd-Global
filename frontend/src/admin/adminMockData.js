@@ -1,3 +1,8 @@
+import usaImage from '../assets/USA-image.jpg';
+import canadaImage from '../assets/Canada-images.jpeg';
+import europeImage from '../assets/Scholarships-in-Europe-Image.jpg';
+import australiaImage from '../assets/Study-in-Australia.webp';
+
 export const statCards = [
   { label: 'Total Applications', value: 1240, delta: '+12%', tone: 'blue' },
   { label: 'Active Scholarships', value: 86, delta: '+4%', tone: 'emerald' },
@@ -43,9 +48,9 @@ export const scholarships = [
 ];
 
 export const countries = [
-  { id: 'ct-usa', name: 'USA', tuition: '$15k - $35k', living: '$1.2k - $1.8k', flag: '/src/assets/USA-image.jpg' },
-  { id: 'ct-can', name: 'Canada', tuition: '$12k - $25k', living: '$1k - $1.6k', flag: '/src/assets/Canada-images.jpeg' },
-  { id: 'ct-eu', name: 'Europe', tuition: '$10k - $20k', living: '$900 - $1.4k', flag: '/src/assets/Scholarships-in-Europe-Image.jpg' },
-  { id: 'ct-au', name: 'Australia', tuition: '$14k - $30k', living: '$1.2k - $1.7k', flag: '/src/assets/Study-in-Australia.webp' },
+  { id: 'ct-usa', name: 'USA', tuition: '$15k - $35k', living: '$1.2k - $1.8k', flag: usaImage },
+  { id: 'ct-can', name: 'Canada', tuition: '$12k - $25k', living: '$1k - $1.6k', flag: canadaImage },
+  { id: 'ct-eu', name: 'Europe', tuition: '$10k - $20k', living: '$900 - $1.4k', flag: europeImage },
+  { id: 'ct-au', name: 'Australia', tuition: '$14k - $30k', living: '$1.2k - $1.7k', flag: australiaImage },
 ];
 
