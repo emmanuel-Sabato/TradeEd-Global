@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 const TOKEN_KEY = 'tradeed_admin_token';
-const CREDS_KEY = 'tradeed_admin_creds';
+const CREDS_KEY = 'tradeed_admin_creds_v2';
 
-const defaultCreds = { email: 'admin@tradeedglobal.com', password: 'Admin@123' };
+const defaultCreds = { email: 'admin@tradeedglobal.com', password: 'Admin@2025' };
 
 const AdminAuthContext = createContext();
 

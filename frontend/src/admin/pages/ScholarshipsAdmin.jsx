@@ -11,7 +11,7 @@ const ScholarshipsAdmin = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [editing, setEditing] = useState(null);
-  const [form, setForm] = useState({ title: '', country: '', coverage: '', deadline: '', status: 'Open', degree: '', field: '' });
+  const [form, setForm] = useState({ title: '', country: '', coverage: '', deadline: '', degree: '', field: '' });
 
   useEffect(() => {
     // if local storage empty, seed it
@@ -23,7 +23,7 @@ const ScholarshipsAdmin = () => {
 
   const openModal = (item) => {
     setEditing(item);
-    setForm(item || { title: '', country: '', coverage: '', deadline: '', status: 'Open', degree: '', field: '' });
+    setForm(item || { title: '', country: '', coverage: '', deadline: '', degree: '', field: '' });
     setModalOpen(true);
   };
 
@@ -73,7 +73,23 @@ const ScholarshipsAdmin = () => {
           { key: 'country', label: 'Country' },
           { key: 'coverage', label: 'Coverage' },
           { key: 'deadline', label: 'Deadline' },
-          { key: 'status', label: 'Status' },
+          {
+            key: 'deadline',
+            label: 'Status',
+            render: (deadline) => {
+              const now = new Date();
+              const deadlineDate = new Date(deadline);
+              const isOpen = !deadline || isNaN(deadlineDate.getTime()) || deadlineDate >= now.setHours(0, 0, 0, 0);
+              return (
+                <span className={`px-2 py-1 rounded-full text-xs font-semibold border ${isOpen
+                  ? 'bg-emerald-500/20 text-emerald-100 border-emerald-500/30'
+                  : 'bg-red-500/20 text-red-100 border-red-500/30'
+                  }`}>
+                  {isOpen ? 'Open' : 'Closed'}
+                </span>
+              );
+            }
+          },
         ]}
         data={list}
         renderActions={(row) => (
@@ -103,13 +119,14 @@ const ScholarshipsAdmin = () => {
           </>
         }
       >
-        {['title', 'country', 'coverage', 'deadline', 'status', 'degree', 'field'].map((field) => (
+        {['title', 'country', 'coverage', 'deadline', 'degree', 'field'].map((field) => (
           <div key={field} className="flex flex-col gap-1">
             <label className="text-xs text-slate-400 capitalize">{field}</label>
             <input
+              type={field === 'deadline' ? 'date' : 'text'}
               value={form[field]}
               onChange={(e) => setForm((prev) => ({ ...prev, [field]: e.target.value }))}
-              className="bg-slate-900 border border-white/10 rounded-lg px-3 py-2 text-sm text-white"
+              className="bg-slate-900 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
             />
           </div>
         ))}

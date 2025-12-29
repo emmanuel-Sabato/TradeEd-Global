@@ -5,12 +5,19 @@ import usaImage from '../assets/USA-image.jpg';
 import canadaImage from '../assets/Canada-images.jpeg';
 import europeImage from '../assets/Scholarships-in-Europe-Image.jpg';
 import australiaImage from '../assets/Study-in-Australia.webp';
+import ukImage from '../assets/image-to-Study-in-UK.webp';
+import irelandImage from '../assets/image-study-in-ireland-for-international-students.webp';
+import chinaImage from '../assets/image-Study-in-China.jpg';
+import germanyImage from '../assets/image-germany-scholarships.jpeg';
 
 const imageFallbacks = {
   USA: usaImage,
   Canada: canadaImage,
-  Europe: europeImage,
+  UK: ukImage,
+  Ireland: irelandImage,
   Australia: australiaImage,
+  China: chinaImage,
+  Germany: germanyImage,
 };
 
 const resolveImage = (country) => {

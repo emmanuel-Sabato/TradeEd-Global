@@ -44,28 +44,30 @@ const Footer = () => {
         <div>
           <p className="text-sm uppercase tracking-wide text-slate-400 font-semibold">Support</p>
           <div className="mt-4 flex flex-col gap-3 text-sm text-slate-300">
-            <a href="mailto:colettenshimyumuremyi@gmail.com" className="hover:text-white transition">
-              colettenshimyumuremyi@gmail.com
+            <a href="mailto:info@tradeedglobal.com" className="hover:text-white transition">
+              info@tradeedglobal.com
             </a>
-            <a href="tel:+250783106399" className="hover:text-white transition">
-              +250 783106399
-            </a>
-            <a href="tel:+250791799287" className="hover:text-white transition">
-              +250 791799287
-            </a>
-            <Link to="/contact" className="hover:text-white transition">
-              Contact Us
+            <p>+250 791 799 287</p>
+            <p>+250 783 106 399</p>
+            <p>+86 156 2162 9912</p>
+            <p>+86 132 3755 2919</p>
+            <Link to="/contact" className="hover:text-white transition text-emerald-400">
+              Contact Us &rarr;
             </Link>
           </div>
         </div>
 
         <div>
           <p className="text-sm uppercase tracking-wide text-slate-400 font-semibold">Locations</p>
-          <div className="mt-4 flex flex-col gap-3 text-sm text-slate-300">
-            <p>New York, USA</p>
-            <p>Toronto, Canada</p>
-            <p>London, UK</p>
-            <p>Sydney, Australia</p>
+          <div className="mt-4 flex flex-col gap-4 text-sm text-slate-300">
+            <div>
+              <p className="text-emerald-400 font-medium mb-1">Rwanda</p>
+              <p className="opacity-80">KN 2 Ave, MIC Building, Ground Floor B66, Nyarugenge, Kigali</p>
+            </div>
+            <div>
+              <p className="text-blue-400 font-medium mb-1">China</p>
+              <p className="opacity-80">Room 904, South Building Block C, Shangpin International, No. 88 Gaoxin Road, Xi’an</p>
+            </div>
           </div>
         </div>
       </div>

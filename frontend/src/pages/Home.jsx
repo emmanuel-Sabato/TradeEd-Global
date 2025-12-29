@@ -9,35 +9,47 @@ import usaImage from '../assets/USA-image.jpg';
 import canadaImage from '../assets/Canada-images.jpeg';
 import europeImage from '../assets/Scholarships-in-Europe-Image.jpg';
 import australiaImage from '../assets/Study-in-Australia.webp';
+import ukImage from '../assets/image-to-Study-in-UK.webp';
+import irelandImage from '../assets/image-study-in-ireland-for-international-students.webp';
+import chinaImage from '../assets/image-Study-in-China.jpg';
+import germanyImage from '../assets/image-germany-scholarships.jpeg';
 import { useEffect, useState } from 'react';
 import { getCountries, defaultCountries } from '../shared/clientData';
 
 const imageFallbacks = {
   USA: usaImage,
   Canada: canadaImage,
-  Europe: europeImage,
+  UK: ukImage,
+  Ireland: irelandImage,
   Australia: australiaImage,
+  China: chinaImage,
+  Germany: germanyImage,
 };
 
 const services = [
   {
-    title: 'Scholarship Assistance',
-    description: 'Identify fully-funded and partial scholarships that align with your academic goals.',
-    Icon: GraduationCap,
-  },
-  {
-    title: 'Visa Application Support',
-    description: 'Complete guidance on documentation, timelines, and interview preparation.',
-    Icon: PlaneTakeoff,
-  },
-  {
-    title: 'University Admissions',
-    description: 'Shortlist programs, craft a winning application, and secure admissions offers.',
+    title: 'University Selection Guidance',
+    description: 'Expert advice to choose the right university and program for your career goals.',
     Icon: School,
   },
   {
-    title: 'Career & Study Guidance',
-    description: 'Plan your study path with industry insights and career-focused counseling.',
+    title: 'Application Support',
+    description: 'Full assistance with admission applications, document preparation, and submission.',
+    Icon: Globe2,
+  },
+  {
+    title: 'Scholarships & Loans',
+    description: 'Guidance on securing scholarships and education loans to fund your studies.',
+    Icon: GraduationCap,
+  },
+  {
+    title: 'Visa Support',
+    description: 'Comprehensive support for visa applications, interviews, and documentation.',
+    Icon: PlaneTakeoff,
+  },
+  {
+    title: 'Affordable Study in China',
+    description: 'Specialized packages for high-quality, cost-effective education in China.',
     Icon: Globe2,
   },
 ];

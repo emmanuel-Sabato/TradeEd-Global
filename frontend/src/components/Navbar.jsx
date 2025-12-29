@@ -53,12 +53,7 @@ const Navbar = () => {
           >
             Apply Now
           </Link>
-          <Link
-            to="/admin/login"
-            className="w-1 h-1 rounded-full bg-emerald-200 "
-            aria-label="Admin login"
-            title="Admin Login"
-          />
+
         </div>
 
         <button
@@ -94,13 +89,6 @@ const Navbar = () => {
               className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-white text-center text-sm font-semibold shadow-lg shadow-blue-500/25"
             >
               Apply Now
-            </Link>
-            <Link
-              to="/admin/login"
-              onClick={() => setOpen(false)}
-              className="self-start px-2 py-1 text-xs text-emerald-300"
-            >
-            •
             </Link>
           </div>
         </div>

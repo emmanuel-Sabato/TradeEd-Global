@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, GraduationCap, Globe2, Settings, ChevronLeft } from 'lucide-react';
+import { LayoutDashboard, GraduationCap, Globe2, Settings, ChevronLeft, Users, MessageCircle } from 'lucide-react';
 
 const links = [
   { to: '/admin', label: 'Dashboard', Icon: LayoutDashboard },
+  { to: '/admin/applicants', label: 'Applicants', Icon: Users },
+  { to: '/admin/messages', label: 'Messages', Icon: MessageCircle },
   { to: '/admin/scholarships', label: 'Scholarships', Icon: GraduationCap },
   { to: '/admin/countries', label: 'Countries', Icon: Globe2 },
   { to: '/admin/settings', label: 'Settings', Icon: Settings },
