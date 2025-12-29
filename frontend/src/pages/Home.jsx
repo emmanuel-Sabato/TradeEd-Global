@@ -174,7 +174,7 @@ const Home = () => {
       <section className="section-container py-16 space-y-8">
         <div className="flex flex-col gap-3">
           <p className="text-blue-200 text-sm font-semibold">Study Destinations</p>
-          <h2 className="text-3xl lg:text-4xl font-bold">Popular pathways for 2025 intake</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold">Popular pathways for all of the time intake</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {destinations.map((destination) => (
