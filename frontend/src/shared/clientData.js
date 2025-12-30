@@ -11,6 +11,7 @@ const isBrowser = typeof window !== 'undefined';
 
 const SCHOLARSHIPS_KEY = 'client_scholarships';
 const COUNTRIES_KEY = 'client_countries_v3';
+const FEEDBACK_KEY = 'client_feedback';
 
 const safeParse = (value, fallback) => {
   try {
@@ -38,6 +39,12 @@ export const defaultCountries = [
   { id: 'ct-ger', name: 'Germany', tuition: '€0 - €3k / year', livingCost: '€850 - €1,200 / month', workRights: '20 hrs/week', flag: germanyImage, universities: ['TU Munich', 'Heidelberg', 'RWTH Aachen'] },
 ];
 
+export const defaultFeedback = [
+  { id: 'fb-1', name: 'James Wilson', fromCountry: 'Kenya', studyCountry: 'Canada', videoUrl: 'https://www.youtube.com/watch?v=kYI4M38HiaM' },
+  { id: 'fb-2', name: 'Maria Garcia', fromCountry: 'Philippines', studyCountry: 'USA', videoUrl: 'https://www.youtube.com/watch?v=R96cTIDuO6Q' },
+  { id: 'fb-3', name: 'Samuel Kim', fromCountry: 'South Korea', studyCountry: 'UK', videoUrl: 'https://www.youtube.com/watch?v=Sc6O41cRE9s' },
+];
+
 export const getScholarships = () => {
   if (!isBrowser) return defaultScholarships;
   const stored = localStorage.getItem(SCHOLARSHIPS_KEY);
@@ -58,5 +65,16 @@ export const getCountries = () => {
 export const setCountries = (data) => {
   if (!isBrowser) return;
   localStorage.setItem(COUNTRIES_KEY, JSON.stringify(data));
+};
+
+export const getFeedback = () => {
+  if (!isBrowser) return defaultFeedback;
+  const stored = localStorage.getItem(FEEDBACK_KEY);
+  return stored ? safeParse(stored, defaultFeedback) : defaultFeedback;
+};
+
+export const setFeedback = (data) => {
+  if (!isBrowser) return;
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(data));
 };
 

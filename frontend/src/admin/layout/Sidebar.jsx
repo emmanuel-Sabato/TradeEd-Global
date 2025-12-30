@@ -8,6 +8,7 @@ const links = [
   { to: '/admin/messages', label: 'Messages', Icon: MessageCircle },
   { to: '/admin/scholarships', label: 'Scholarships', Icon: GraduationCap },
   { to: '/admin/countries', label: 'Countries', Icon: Globe2 },
+  { to: '/admin/feedback', label: 'Feedback', Icon: MessageCircle },
   { to: '/admin/settings', label: 'Settings', Icon: Settings },
 ];
 

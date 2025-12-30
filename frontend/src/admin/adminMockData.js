@@ -53,4 +53,8 @@ export const countries = [
   { id: 'ct-eu', name: 'Europe', tuition: '$10k - $20k', living: '$900 - $1.4k', flag: europeImage },
   { id: 'ct-au', name: 'Australia', tuition: '$14k - $30k', living: '$1.2k - $1.7k', flag: australiaImage },
 ];
-
+export const feedback = [
+  { id: 'fb-1', name: 'James Wilson', fromCountry: 'Kenya', studyCountry: 'Canada', videoUrl: 'https://www.youtube.com/watch?v=kYI4M38HiaM' },
+  { id: 'fb-2', name: 'Maria Garcia', fromCountry: 'Philippines', studyCountry: 'USA', videoUrl: 'https://www.youtube.com/watch?v=R96cTIDuO6Q' },
+  { id: 'fb-3', name: 'Samuel Kim', fromCountry: 'South Korea', studyCountry: 'UK', videoUrl: 'https://www.youtube.com/watch?v=Sc6O41cRE9s' },
+];

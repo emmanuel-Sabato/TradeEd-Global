@@ -6,6 +6,7 @@ import CountriesAdmin from './pages/CountriesAdmin';
 import Settings from './pages/Settings';
 import Applicants from './pages/Applicants';
 import Messages from './pages/Messages';
+import FeedbackAdmin from './pages/FeedbackAdmin';
 import AdminLogin from './pages/AdminLogin';
 import { AdminAuthProvider, useAdminAuth } from './AdminAuthContext';
 
@@ -35,6 +36,7 @@ const AdminRoutesContent = () => (
       <Route path="/admin/messages" element={<Messages />} />
       <Route path="/admin/scholarships" element={<ScholarshipsAdmin />} />
       <Route path="/admin/countries" element={<CountriesAdmin />} />
+      <Route path="/admin/feedback" element={<FeedbackAdmin />} />
       <Route path="/admin/settings" element={<Settings />} />
     </Route>
   </Routes>
