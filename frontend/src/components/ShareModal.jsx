@@ -40,7 +40,7 @@ Apply here: https://tradeedglobal.com/apply`;
     };
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(shareText);
+        navigator.clipboard.writeText('https://tradeedglobal.com/scholarships');
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
