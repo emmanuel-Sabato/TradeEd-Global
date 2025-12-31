@@ -11,7 +11,7 @@ const ScholarshipCard = ({ title, country, coverage, deadline, degree, field }) 
       <div className="rounded-2xl border border-white/5 bg-slate-900 p-6 shadow-soft hover:-translate-y-1 transition relative group">
         <button
           onClick={() => setIsShareOpen(true)}
-          className="absolute top-4 right-4 p-2 rounded-full bg-white/5 text-slate-400 opacity-0 group-hover:opacity-100 hover:bg-white/10 hover:text-white transition"
+          className="absolute top-4 right-4 p-2 rounded-full bg-white/5 text-slate-400 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 hover:bg-white/10 hover:text-white transition"
           title="Share Scholarship"
         >
           <Share2 size={16} />
