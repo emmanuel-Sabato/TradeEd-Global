@@ -55,6 +55,55 @@ const Applicants = () => {
         );
     };
 
+    const handleExportCSV = () => {
+        if (!applicants.length) {
+            alert("No applicants to export.");
+            return;
+        }
+
+        // Define headers
+        const headers = [
+            "ID", "Full Name", "Email", "Phone", "Degree", "GPA",
+            "Graduation Year", "Scholarship", "Target Country",
+            "Field of Study/Program", "Status", "Date Applied"
+        ];
+
+        // Map data to CSV rows
+        const csvRows = [
+            headers.join(","), // Header row
+            ...applicants.map(app => {
+                const row = [
+                    app.id,
+                    `"${app.fullName || ''}"`, // Quote strings to handle commas
+                    app.email,
+                    app.phone ? `"${app.phone}"` : '',
+                    `"${app.degree || ''}"`,
+                    app.gpa,
+                    app.graduationYear,
+                    `"${app.scholarship || ''}"`,
+                    `"${app.country || ''}"`,
+                    `"${app.fieldOfStudy || app.program || ''}"`,
+                    app.status,
+                    app.date
+                ];
+                return row.join(",");
+            })
+        ];
+
+        // Create Blob and download
+        const csvString = csvRows.join("\n");
+        const blob = new Blob([csvString], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `applicants_export_${new Date().toISOString().split('T')[0]}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
     return (
         <div className="space-y-6">
             <div className="flex items-center justify-between">
@@ -63,8 +112,10 @@ const Applicants = () => {
                     <p className="text-slate-400">Manage and review student applications</p>
                 </div>
                 <div className="flex gap-2">
-                    {/* Placeholder for export functionality */}
-                    <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition">
+                    <button
+                        onClick={handleExportCSV}
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition"
+                    >
                         <Download size={18} />
                         <span>Export CSV</span>
                     </button>
